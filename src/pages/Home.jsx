@@ -54,7 +54,7 @@ export default function Home(){
                                 </div>
                                 <div id="part-2" className='w-1/2'>
                                     <h1 className='text-gray-500'>Avg. Reaction Time</h1>
-                                    <h1 className='text-5xl'>{bestAvgTime}<span className='text-2xl text-gray-500'>ms</span></h1>
+                                    <h1 className='text-5xl'>{bestAvgTime === 0 ? "-" : bestAvgTime}<span className='text-2xl text-gray-500'>{bestAvgTime === 0 ? "" : "ms"}</span></h1>
                                 </div>
                             </div>
                         </div>

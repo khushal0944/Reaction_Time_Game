@@ -28,7 +28,7 @@ export default function GameOver(){
                     </div>
                     <div id="part-2" className='w-1/2'>
                         <h1 className='text-gray-500'>Best</h1>
-                        <h1 className='text-5xl'>{bestAvgTime}<span className='text-2xl text-gray-500'>ms</span></h1>
+                        <h1 className='text-5xl'>{bestAvgTime === 0 ? "-" : bestAvgTime}<span className='text-2xl text-gray-500'>{bestAvgTime === 0 ? "" : "ms"}</span></h1>
                     </div>
                 </div>
                 <Link to={"/"}><button className='w-2/3 shadow-xl bg-[#f9f8b0] mt-16 hover:scale-105 transition hover:transition rounded-xl border-4 border-black py-2'><i className="ri-home-2-fill text-5xl"></i></button></Link>

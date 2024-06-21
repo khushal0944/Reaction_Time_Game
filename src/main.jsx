@@ -6,6 +6,8 @@ import Layout from './Layout.jsx'
 import {Home, Game, GameOver} from './pages'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
+
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Layout />}>

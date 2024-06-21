@@ -5,5 +5,5 @@ import GameOver from './GameOver'
 export {
     Game,
     Home,
-    GameOver
+    GameOver,
 }

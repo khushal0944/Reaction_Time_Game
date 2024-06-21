@@ -1,28 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit"; 
-
-const AvgTime = JSON.parse(localStorage.getItem("avgtime"))
-const best = JSON.parse(localStorage.getItem("bestscore"))
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    bestScore : best || 0,
-    bestAvgTime : AvgTime || 0
+    score : 0,
+    avgTime : 0
 }
 
 const scoreSlice = createSlice({
-    name : "BestScore",
+    name : "scores",
     initialState,
     reducers : {
         updateScore : (state, action)=>{
-            state.bestScore = action.payload;
-            localStorage.setItem("bestscore",JSON.stringify(state.bestScore))
+            state.score = action.payload;
         },
         updateAvgTime : (state, action)=>{
-            state.bestAvgTime = action.payload;
-            localStorage.setItem("avgtime",JSON.stringify(state.bestAvgTime))
+            state.avgTime = action.payload;
         }
     }
 })
 
-export const {updateScore, updateAvgTime} = scoreSlice.actions
+export const {updateAvgTime, updateScore} = scoreSlice.actions
 
 export default scoreSlice.reducer;

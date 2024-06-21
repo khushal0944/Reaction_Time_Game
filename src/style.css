@@ -1,3 +1,7 @@
+*{
+    font-family: "Urbanist", sans-serif;
+    font-weight: 500;
+}
 .anime{
     animation: animate 300ms linear;
     /* transition : all 2s linear; */

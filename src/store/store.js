@@ -1,11 +1,13 @@
 import {configureStore} from '@reduxjs/toolkit'
-import scoreSlice from '../slices/ScoreSlice'
+import bestScoreSlice from '../slices/bestScoreSlice'
 import  userSlice from '../slices/userSlice'
+import  scoreSlice from '../slices/scoreSlice'
 
 const store = configureStore({
     reducer : {
-        score : scoreSlice,
+        bestOverAll : bestScoreSlice,
         user : userSlice,
+        currentScores : scoreSlice
     }
 }) 
 export default store;

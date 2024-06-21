@@ -14,6 +14,9 @@ Welcome to the **Reaction Time Game** project! This web application is designed 
 - **Frontend**: React, React Router, Tailwind CSS
 - **State Management**: Redux
 - **Icons**: Remix Icon
+- **Styling**: Custom CSS with Tailwind utilities
+- **Deployment**: Deployed on vercel, accessible at 
+
 
 ## Contributing
 

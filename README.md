@@ -1,8 +1,37 @@
-# React + Vite
+# Reaction Time Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Reaction Time Game** project! This web application is designed to test and improve your reflexes through interactive and engaging gameplay. Built with React and Redux, it offers a smooth user experience with real-time statistics tracking and performance metrics.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Registration**: Easily create and manage user profiles.
+- **Interactive Gameplay**: Engage in a fast-paced game to test your reaction speed.
+- **Statistics Tracking**: Monitor your progress with detailed statistics on games played, squares clicked, best scores, and average reaction times.
+- **Responsive Design**: Enjoy a seamless experience across all devices.
+
+## Tech Stack
+
+- **Frontend**: React, React Router, Tailwind CSS
+- **State Management**: Redux
+- **Icons**: Remix Icon
+- **Styling**: Custom CSS with Tailwind utilities
+- **Deployment**: Deployed on vercel, accessible at 
+
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute to the project, please follow these steps:
+
+1. Fork the repository and clone it locally.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and test thoroughly.
+4. Commit your changes and push to your forked repository.
+5. Open a pull request with a clear description of your changes.
+
+## Contact
+
+For any inquiries or feedback, please reach out to us at [khushalsuthar0944@gmail.com](mailto:khushalsuthar0944@gmail.com).
+
+---
+
+Feel free to explore and enhance your reaction time with our game!

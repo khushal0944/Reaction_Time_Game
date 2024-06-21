@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { updateBestAvgTime } from "../slices/bestScoreSlice";
 import { useState,useEffect } from "react";
 import { updateAvgTime } from "../slices/scoreSlice";
-import { updateGamesPlayed, updateBoxClicked } from "../slices/userSlice"
+import { updateGamesPlayed, updateBoxClicked } from "../slices/userSlice";
 
 export const GridItems = ({ rows, columns, highlightedIndex, setScore, setEndTime, score, timeArray }) => {
     const navigate = useNavigate()

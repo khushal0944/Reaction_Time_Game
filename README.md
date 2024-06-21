@@ -32,6 +32,10 @@ We welcome contributions from the community! If you'd like to contribute to the 
 
 For any inquiries or feedback, please reach out to us at [khushalsuthar0944@gmail.com](mailto:khushalsuthar0944@gmail.com).
 
+## Credits
+
+UI inspired by TrinstanGames
+
 ---
 
 Feel free to explore and enhance your reaction time with our game!

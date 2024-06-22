@@ -23,7 +23,7 @@ export default function Home(){
                 <p className="mt-2 text-lg dark:text-white">Test And Improve Your Reflexes</p>
                 {
                     !userName && <div>
-                        <h1 className="mt-8 text-xl">Please Enter UserName First</h1>
+                        <h1 className="mt-8 text-xl dark:text-white">Please Enter UserName First</h1>
                         <InputUser />
                     </div> 
                 }

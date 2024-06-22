@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateBestScore } from "../slices/bestScoreSlice";
 import { GridItems } from '../components/GridItems'
 import { updateScore } from "../slices/scoreSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Game() {
 	const [score, setScore] = useState(0);
@@ -14,7 +15,30 @@ export default function Game() {
     const [timingArray, setTimingArray] = useState([])
     const bestScore = useSelector(state => state.bestOverAll.bestScore); 
     const dispatch = useDispatch() 
-    
+    const navigate = useNavigate()
+
+    useEffect(() =>{
+        let reloadCount = parseInt(localStorage.getItem("reloadCounts") || "0")
+        reloadCount++;
+        localStorage.setItem("reloadCounts",JSON.stringify(reloadCount));
+        if(reloadCount > 1){
+            navigate("/")
+        }
+        return ()=>{
+            localStorage.removeItem("reloadCounts")
+        }
+    },[navigate])
+
+    const theme = useSelector(state => state.themes.theme)
+    useEffect(() => {
+        const htmlElement = document.querySelector("html");
+
+        if (htmlElement) {
+            htmlElement.classList.remove("dark", "light");
+            htmlElement.classList.add(theme);
+        }
+    }, [theme]);
+
     useEffect(()=>{
         if(score > bestScore) dispatch(updateBestScore(score))
         dispatch(updateScore(score))
@@ -41,7 +65,7 @@ export default function Game() {
 
 	return (
 		<div className="h-screen overflow-hidden relative w-full">
-            <h1 className="absolute left-1/2 text-5xl top-4 pointer-events-none drop-shadow-lg text-white cursor-default">{score}</h1>
+            <h1 className="absolute left-1/2 text-5xl top-4 pointer-events-none drop-shadow-xl text-white cursor-default">{score}</h1>
 			<GridItems
 				rows={rowGrid}
 				columns={colGrid}

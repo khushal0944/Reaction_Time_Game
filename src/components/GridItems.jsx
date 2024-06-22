@@ -57,7 +57,7 @@ export const GridItems = ({ rows, columns, highlightedIndex, setScore, setEndTim
 
 	return (
 		<div
-			className={`grid w-full h-full p-2 bg-green-300`}
+			className={`grid w-full h-full dark:bg-green-900 p-2 bg-green-300`}
 			style={{
 				gridTemplateRows: `repeat(${rows}, 1fr)`,
 				gridTemplateColumns: `repeat(${columns}, 1fr)`,

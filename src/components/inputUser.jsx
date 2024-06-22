@@ -8,7 +8,7 @@ export default function InputUser(){
     const dispatch = useDispatch()
     function handleSubmit(e){
         e.preventDefault();
-        if(Number(input) || input.trim() === "" || input.trim().length < 3){
+        if(Number(input) || input.trim() === "" || input.trim().length < 3 || input.trim().length > 20){
             setShowError(true);
             return;
         };
@@ -18,7 +18,7 @@ export default function InputUser(){
     }
     function setUser(e){
         setInput(e)
-        if(Number(input) || input.trim().length < 3 || input.trim() === ""){
+        if(Number(input) || input.trim().length < 3 || input.trim() === "" || input.trim().length > 20){
             setShowError(true);
             return;
         };

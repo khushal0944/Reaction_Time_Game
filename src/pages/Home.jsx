@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom"
 import InputUser from '../components/inputUser'
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react"
 
 import ThemeComponent from "../components/ThemeComponent"
+import ChangeUser from "../components/changeUserName"
+import { deleteBestScores } from "../slices/bestScoreSlice"
+import { deleteUser } from "../slices/userSlice"
 
 export default function Home(){
     const userName = useSelector(state => state.user.userName)
@@ -12,6 +15,15 @@ export default function Home(){
     const boxClicked = useSelector(state => state.user.boxClicked)
     const bestAvgTime = useSelector(state => state.bestOverAll.bestAvgTime)
     const bestScore = useSelector(state => state.bestOverAll.bestScore)
+
+    const [editButton, setEditButton] = useState(false)
+    const dispatch = useDispatch()
+
+    function DeleteUser(){
+        dispatch(deleteBestScores());
+        dispatch(deleteUser())
+        window.location.reload();
+    }
 
     return (
         <div className="w-full min-h-screen max-h-fit flex dark:bg-gray-950 justify-center bg-pink-100">
@@ -41,8 +53,12 @@ export default function Home(){
                 {
                     showUserStats && <div>
                         <div id="mainBox" className='w-full text-lg p-2 text-center my-7'>
-                            <h1 className="text-5xl underline drop-shadow-md dark:text-gray-100 mb-7">Hello {userName}</h1>
-                            <div id='YourScore' className='flex w-full'>
+                            <div className="flex justify-center mb-7 gap-7">
+                                <h1 className="text-5xl drop-shadow-md dark:text-gray-100">{editButton ? <ChangeUser user={userName} setEditButton={setEditButton}/> : `Hello ${userName}`}</h1>
+                                {!editButton && <button className="text-4xl text-blue-700" onClick={() => setEditButton((prev) => !prev)}><i className="ri-edit-line"></i></button>}
+                                <button className="text-4xl text-red-700" onClick={DeleteUser}><i className="ri-delete-bin-line"></i></button>
+                            </div>
+                            <div id='YourScore' className='flex w-full mt-16'>
                                 <div id="part-1" className='w-1/2'>
                                     <h1 className='text-gray-500 dark:text-gray-300'>Games Played</h1>
                                     <h1 className='text-6xl text-rose-900 dark:text-rose-600'>{gamesPlayed}</h1>

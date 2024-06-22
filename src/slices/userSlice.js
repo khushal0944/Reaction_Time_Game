@@ -35,9 +35,14 @@ const userSlice = createSlice({
         updateBoxClicked : (state,action)=>{
             state.boxClicked = state.boxClicked + action.payload;
             localStorage.setItem("boxClicked",JSON.stringify(state.boxClicked))
+        },
+        deleteUser : ()=>{
+            localStorage.removeItem("userName")
+            localStorage.removeItem("gamesPlayed")
+            localStorage.removeItem("boxClicked")
         }
     }
 })
 
-export const {updateBoxClicked, setUserName, updateGamesPlayed} = userSlice.actions
+export const {updateBoxClicked, setUserName, updateGamesPlayed, deleteUser} = userSlice.actions
 export default userSlice.reducer

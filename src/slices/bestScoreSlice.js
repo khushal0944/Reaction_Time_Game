@@ -19,10 +19,14 @@ const bestScoreSlice = createSlice({
         updateBestAvgTime : (state, action)=>{
             state.bestAvgTime = action.payload;
             localStorage.setItem("bestAvgtime",JSON.stringify(state.bestAvgTime))
+        },
+        deleteBestScores : ()=>{
+            localStorage.removeItem("bestAvgtime")
+            localStorage.removeItem("bestscore")
         }
     }
 })
 
-export const {updateBestScore, updateBestAvgTime} = bestScoreSlice.actions
+export const {updateBestScore, updateBestAvgTime, deleteBestScores} = bestScoreSlice.actions
 
 export default bestScoreSlice.reducer;

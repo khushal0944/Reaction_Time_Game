@@ -28,7 +28,7 @@ export default function Game() {
 		}
 		const totalCells = rowGrid * colGrid;
 		const randomIndex = Math.floor(Math.random() * totalCells);
-        randomIndex !== highlightedIndex ? setHighlightedIndex(randomIndex) : setHighlightedIndex(randomIndex+1 > totalCells ? randomIndex-2 : randomIndex-1)
+        randomIndex !== highlightedIndex ? setHighlightedIndex(randomIndex) : setHighlightedIndex((randomIndex === totalCells || randomIndex === 0) ? randomIndex : randomIndex-1)
         setStartTime(Date.now())
 	}, [score, rowGrid, colGrid]);
     
@@ -40,8 +40,8 @@ export default function Game() {
     },[endTime])
 
 	return (
-		<div className="h-screen relative w-full">
-            <h1 className="absolute left-1/2 text-5xl drop-shadow-lg text-white cursor-default">{score}</h1>
+		<div className="h-screen overflow-hidden relative w-full">
+            <h1 className="absolute left-1/2 text-5xl top-4 pointer-events-none drop-shadow-lg text-white cursor-default">{score}</h1>
 			<GridItems
 				rows={rowGrid}
 				columns={colGrid}

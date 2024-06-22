@@ -46,7 +46,7 @@ export const GridItems = ({ rows, columns, highlightedIndex, setScore, setEndTim
 					className={`bg-black rounded-3xl flex justify-center items-center`}
                     onClick={highlightedClicked}
 				>
-                    <i className="ri-cursor-fill text-white text-2xl transition"></i>
+                    <i className="ri-cursor-fill text-white text-3xl transition"></i>
 				</div> : <div
 					key={`${i}-${j}`}
                     onClick={endGame}

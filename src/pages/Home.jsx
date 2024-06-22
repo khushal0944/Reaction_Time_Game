@@ -12,8 +12,8 @@ export default function Home(){
     const bestScore = useSelector(state => state.bestOverAll.bestScore)
 
     return (
-        <div className="w-full h-screen flex justify-center bg-pink-100">
-            <div id="mainBox" className="text-center w-2/5 px-4 mt-16">
+        <div className="w-full min-h-screen max-h-fit flex justify-center bg-pink-100">
+            <div id="mainBox" className="text-center h-fit py-4  xs:max-w-2xl max-w-xs w-11/12 px-4 mt-7">
                 <h1 className="text-5xl font-semibold">Reaction<span className="text-red-700">!</span></h1>
                 <p className="mt-2 text-lg">Test And Improve Your Reflexes</p>
                 {

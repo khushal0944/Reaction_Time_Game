@@ -16,7 +16,7 @@ export default function GameOver(){
         reloadCount++;
         localStorage.setItem("reloadCounts",reloadCount.toString());
         if(reloadCount > 1){
-            navigate("/")
+            navigate("")
         }
         return ()=>{
             localStorage.removeItem("reloadCounts")

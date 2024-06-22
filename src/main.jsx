@@ -10,7 +10,7 @@ import store from './store/store.js'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route exact path='/' element={<Layout />}>
+        <Route path='/' element={<Layout />}>
             <Route path='' element={<Home />} />
             <Route path='game' element={<Game />} />
             <Route path='gameover' element={<GameOver />} />

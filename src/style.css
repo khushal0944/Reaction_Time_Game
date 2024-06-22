@@ -2,18 +2,6 @@
     font-family: "Urbanist", sans-serif;
     font-weight: 500;
 }
-.anime{
-    animation: animate 200ms linear;
-}
-
-@keyframes animate {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
 
 ::selection{
     background-color: rgb(227, 125, 125);

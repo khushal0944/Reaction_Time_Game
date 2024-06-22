@@ -14,7 +14,7 @@ export default function Home(){
     const bestScore = useSelector(state => state.bestOverAll.bestScore)
 
     return (
-        <div className="w-full min-h-screen max-h-fit anime flex dark:bg-gray-950 justify-center bg-pink-100">
+        <div className="w-full min-h-screen max-h-fit flex dark:bg-gray-950 justify-center bg-pink-100">
             <div id="themeButton" className="absolute right-4 gap-4 top-4 flex items-center ">
                 <ThemeComponent />
             </div>

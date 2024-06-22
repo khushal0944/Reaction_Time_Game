@@ -33,7 +33,7 @@ export default function GameOver(){
     }, [theme]);
 
     return (
-        <div className="min-h-screen w-full anime flex justify-center dark:bg-zinc-900 h-fit bg-red-200">
+        <div className="min-h-screen w-full flex justify-center dark:bg-zinc-900 h-fit bg-red-200">
             <div id="mainBox" className='min-w-fit h-fit w-2/5 text-lg p-2 text-center my-10'>
                 <h1 className='text-5xl text-red-800 dark:text-red-400 mb-8 font-semibold uppercase'>Game Over!</h1>
                 <div id='YourScore' className='flex w-full'>

@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
 import InputUser from '../components/inputUser'
 import { useDispatch, useSelector } from "react-redux"
-import { useState, useEffect } from "react"
-
+import { useState, useEffect, useRef } from "react"
 import ThemeComponent from "../components/ThemeComponent"
 import { deleteBestScores } from "../slices/bestScoreSlice"
 import { deleteUser } from "../slices/userSlice"
@@ -16,7 +15,7 @@ export default function Home(){
     const boxClicked = useSelector(state => state.user.boxClicked)
     const bestAvgTime = useSelector(state => state.bestOverAll.bestAvgTime)
     const bestScore = useSelector(state => state.bestOverAll.bestScore)
-
+    const audioRef = useRef(null)
     const [editButton, setEditButton] = useState(false)
     const dispatch = useDispatch()
     const [input, setInput] = useState(userName)
@@ -40,9 +39,9 @@ export default function Home(){
     }
 
     const playSound = ()=>{
-        const audio = new Audio("./sound1.mp3");
-        audio.volume = 0.7
-        audio.play();
+        audioRef.current = new Audio("./sound1.mp3");
+        audioRef.current.volume = 0.8
+        audioRef.current.play();
     }
 
     const showUserDetails = ()=>{

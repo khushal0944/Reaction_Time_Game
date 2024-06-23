@@ -1,5 +1,5 @@
 import { changeTheme } from "../slices/themeSlice"
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function ThemeComponent(){
@@ -15,16 +15,21 @@ export default function ThemeComponent(){
             htmlElement.classList.add(theme);
         }
     }, [theme]);
+    const audioOnRef = useRef(null);
+    const audioOffRef = useRef(null);
+
+    useEffect(()=>{
+        audioOnRef.current = new Audio("./toggleOn.mp3")
+        audioOffRef.current = new Audio("./toggleOff.mp3")
+    },[])
 
     function playSound(){
         if(!inputTheme){
-            const audioOn = new Audio("./toggleOn.mp3")
-            audioOn.volume = 0.5
-            audioOn.play();
+            audioOnRef.current.volume = 0.8
+            audioOnRef.current.play();
         } else{
-            const audioOff = new Audio("./toggleOff.mp3")
-            audioOff.volume = 0.5
-            audioOff.play();
+            audioOffRef.current.volume = 0.8
+            audioOffRef.current.play();
         }
     }
 

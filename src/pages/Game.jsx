@@ -10,9 +10,9 @@ export default function Game() {
 	const [rowGrid, setRowGrid] = useState(3);
 	const [colGrid, setColGrid] = useState(3);
 	const [highlightedIndex, setHighlightedIndex] = useState(-1);
-    const [startTime, setStartTime] = useState(null);
-    const [endTime, setEndTime] = useState(null);
-    const [timingArray, setTimingArray] = useState([])
+	const [startTime, setStartTime] = useState(null);
+	const [endTime, setEndTime] = useState(null);
+	const [timingArray, setTimingArray] = useState([])
     const bestScore = useSelector(state => state.bestOverAll.bestScore); 
     const dispatch = useDispatch() 
     const navigate = useNavigate()
@@ -47,8 +47,12 @@ export default function Game() {
 	useEffect(() => {
 		if (score >= 35 && score < 70) {
 			setRowGrid(4);
-		} else if (score >= 70) {
+		} else if (score >= 70 && score < 100) {
 			setColGrid(4);
+		} else if (score >= 100 && score < 130) {
+			setRowGrid(5);
+		} else if (score >= 130) {
+			setColGrid(5);
 		}
 		const totalCells = rowGrid * colGrid;
 		const randomIndex = Math.floor(Math.random() * totalCells);

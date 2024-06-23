@@ -15,6 +15,7 @@ export default function InputUser(){
         setShowError(false);
         dispatch(setUserName(input))
         setInput("")
+        window.location.reload()
     }
 
     let count = useRef(1);

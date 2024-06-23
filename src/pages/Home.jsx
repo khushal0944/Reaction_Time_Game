@@ -78,9 +78,9 @@ export default function Home(){
                         <div id="mainBox" className='w-full text-lg p-2 text-center my-7'>
                             <form>
                                 <h1 className="text-5xl drop-shadow-md w-full dark:text-gray-100">{editButton ? <input type="text" placeholder="New Username" value={input} className="w-full dark:bg-gray-800 dark:focus-within:border-white dark:border-[#727272] outline-none dark:focus-within:bg-gray-900 dark:placeholder:text-gray-300 dark:text-white border-black border-2 rounded-xl p-2 text-2xl" onInput={(e)=> setInput(e.target.value)} /> : `Hello ${userName}`}</h1>
-                                {showError && editButton && <p className="text-red-700 absolute left-16 dark:text-red-500 text-2xl">Invalid User Name</p>}
-                                {!editButton && <button className="text-4xl mr-5 mt-8 text-blue-700" onClick={() => setEditButton((prev) => !prev)}><i className="ri-edit-line"></i></button>}
-                                {editButton && <button type="submit" className="text-4xl mr-5 mt-8 text-blue-700" onClick={(e) => handleSubmit(e)}><i className="ri-save-3-line"></i></button>}
+                                {showError && editButton && <p className="text-red-700 mt-2 dark:text-red-500 text-2xl">Invalid User Name</p>}
+                                {!editButton && <button className="text-4xl mr-5 mt-5 text-blue-700" onClick={() => setEditButton((prev) => !prev)}><i className="ri-edit-line"></i></button>}
+                                {editButton && <button type="submit" className="text-4xl mr-5 mt-5 text-blue-700" onClick={(e) => handleSubmit(e)}><i className="ri-save-3-line"></i></button>}
                                 <button className="text-4xl text-red-700" onClick={DeleteUser}><i className="ri-delete-bin-line"></i></button>
                             </form>
                             <div id='YourScore' className='flex w-full mt-16'>

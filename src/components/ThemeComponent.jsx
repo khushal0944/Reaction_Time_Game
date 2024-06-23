@@ -16,6 +16,18 @@ export default function ThemeComponent(){
         }
     }, [theme]);
 
+    function playSound(){
+        if(!inputTheme){
+            const audioOn = new Audio("./toggleOn.mp3")
+            audioOn.volume = 0.5
+            audioOn.play();
+        } else{
+            const audioOff = new Audio("./toggleOff.mp3")
+            audioOff.volume = 0.5
+            audioOff.play();
+        }
+    }
+
     function handleThemeToggle(e){
         setInputTheme(e)
         dispatch(changeTheme())
@@ -23,7 +35,7 @@ export default function ThemeComponent(){
     return (
         <>
             <label className="switch">
-                <input type="checkbox" checked={inputTheme} onChange={(e) => handleThemeToggle(e.currentTarget.checked)} />
+                <input type="checkbox" checked={inputTheme} onClick={playSound} onChange={(e) => handleThemeToggle(e.currentTarget.checked)} />
                 <span className="slider"></span>
             </label>
         </>

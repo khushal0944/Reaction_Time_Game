@@ -25,10 +25,10 @@ export default function ThemeComponent(){
 
     function playSound(){
         if(!inputTheme){
-            audioOnRef.current.volume = 0.8
+            audioOnRef.current.volume = 0.6
             audioOnRef.current.play();
         } else{
-            audioOffRef.current.volume = 0.8
+            audioOffRef.current.volume = 0.6
             audioOffRef.current.play();
         }
     }

@@ -10,9 +10,9 @@ export default function Game() {
 	const [rowGrid, setRowGrid] = useState(3);
 	const [colGrid, setColGrid] = useState(3);
 	const [highlightedIndex, setHighlightedIndex] = useState(-1);
-    const [startTime, setStartTime] = useState(null);
-    const [endTime, setEndTime] = useState(null);
-    const [timingArray, setTimingArray] = useState([])
+	const [startTime, setStartTime] = useState(null);
+	const [endTime, setEndTime] = useState(null);
+	const [timingArray, setTimingArray] = useState([])
     const bestScore = useSelector(state => state.bestOverAll.bestScore); 
     const dispatch = useDispatch() 
     const navigate = useNavigate()

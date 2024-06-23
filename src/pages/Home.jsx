@@ -20,7 +20,6 @@ export default function Home(){
     const [editButton, setEditButton] = useState(false)
     const dispatch = useDispatch()
     const [input, setInput] = useState(userName)
-
     function DeleteUser(){
         dispatch(deleteBestScores());
         dispatch(deleteUser())
@@ -38,6 +37,17 @@ export default function Home(){
         setEditButton((prev) => !prev)
         setShowError(false);
         dispatch(setUserName(input))
+    }
+
+    const playSound = ()=>{
+        const audio = new Audio("./sound1.mp3");
+        audio.volume = 0.7
+        audio.play();
+    }
+
+    const showUserDetails = ()=>{
+        playSound()
+        setShowUserStats((prev) => !prev);
     }
 
     useEffect(()=>{
@@ -64,14 +74,14 @@ export default function Home(){
                 }
                 {userName && !showUserStats &&
                 <Link to={"/game"}>
-                    <button className=" w-full dark:bg-gray-800 hover:dark:bg-gray-900 hover:dark:border-white dark:border-[#727272] shadow-xl dark:text-cyan-300 bg-[#f9f8b0] mt-16 hover:scale-105 transition hover:transition rounded-xl border-4 border-black  h-20 "><i className="ri-play-large-fill text-4xl"></i></button>
+                    <button onClick={playSound} className=" w-full dark:bg-gray-800 hover:dark:bg-gray-900 hover:dark:border-white dark:border-[#727272] shadow-xl dark:text-cyan-300 bg-[#f9f8b0] mt-16 hover:scale-105 transition hover:transition rounded-xl border-4 border-black  h-20 "><i className="ri-play-large-fill text-4xl"></i></button>
                 </Link>
                 }
                 {
-                    userName && !showUserStats && <button onClick={() => setShowUserStats(true)} className=" w-full mt-8 dark:bg-gray-800 hover:dark:bg-gray-900 dark:text-cyan-300 hover:dark:border-white dark:border-[#727272] shadow-xl bg-[#f9f8b0] hover:scale-105 transition hover:transition rounded-xl border-4 border-black  h-20 "><i className="ri-user-fill text-4xl"></i></button>
+                    userName && !showUserStats && <button onClick={showUserDetails} className=" w-full mt-8 dark:bg-gray-800 hover:dark:bg-gray-900 dark:text-cyan-300 hover:dark:border-white dark:border-[#727272] shadow-xl bg-[#f9f8b0] hover:scale-105 transition hover:transition rounded-xl border-4 border-black  h-20 "><i className="ri-user-fill text-4xl"></i></button>
                 }
                 {
-                    showUserStats && <button onClick={() => setShowUserStats(false)} className=" w-full mt-8 dark:border-[#727272] shadow-xl bg-[#f9f8b0] hover:scale-105 transition hover:transition rounded-xl border-4 border-black  h-20  dark:bg-gray-800 hover:dark:bg-gray-900 hover:dark:border-white dark:text-cyan-300  "><i className="ri-home-2-fill text-4xl"></i></button>
+                    showUserStats && <button onClick={showUserDetails} className=" w-full mt-8 dark:border-[#727272] shadow-xl bg-[#f9f8b0] hover:scale-105 transition hover:transition rounded-xl border-4 border-black  h-20  dark:bg-gray-800 hover:dark:bg-gray-900 hover:dark:border-white dark:text-cyan-300  "><i className="ri-home-2-fill text-4xl"></i></button>
                 }
                 {
                     showUserStats && <div>

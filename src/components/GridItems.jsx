@@ -19,11 +19,15 @@ export const GridItems = ({ rows, columns, highlightedIndex, setScore, setEndTim
     }, [timeArray]);
 
     function highlightedClicked(){
+        const audio = new Audio("./sound2Game.mp3");
+        audio.play();
         setScore(prev => prev + 1)
         setEndTime(Date.now())
     }
 
     const endGame = () => {
+        const audio = new Audio("./GameOver.mp3");
+        audio.play();
         if(avgTime) dispatch(updateAvgTime(avgTime.toFixed(0)))
         if ((avgTime < bestAvgTime || bestAvgTime === 0) && score >= 5 ) {
             console.log("Updating Best Avg Time:", avgTime);

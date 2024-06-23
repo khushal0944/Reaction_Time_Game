@@ -47,8 +47,12 @@ export default function Game() {
 	useEffect(() => {
 		if (score >= 35 && score < 70) {
 			setRowGrid(4);
-		} else if (score >= 70) {
+		} else if (score >= 70 && score < 100) {
 			setColGrid(4);
+		} else if (score >= 100 && score < 130) {
+			setRowGrid(5);
+		} else if (score >= 130) {
+			setColGrid(5);
 		}
 		const totalCells = rowGrid * colGrid;
 		const randomIndex = Math.floor(Math.random() * totalCells);
